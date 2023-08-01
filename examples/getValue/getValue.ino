@@ -12,7 +12,7 @@ uint8_t i2c_address = 0;
 
 void page_get_encoder(void) {
     int32_t encoder_value = sensor.getEncoderValue();
-    bool btn_stauts       = sensor.getButtonStatus();
+    bool btn_status       = sensor.getButtonStatus();
     Serial.println(encoder_value);
     if (last_value != encoder_value) {
         if (last_value > encoder_value) {
@@ -24,12 +24,12 @@ void page_get_encoder(void) {
     } else {
         // sensor.setLEDColor(0, 0x001100);
     }
-    if (!btn_stauts) {
+    if (!btn_status) {
         sensor.setLEDColor(0, 0x001100);
     }
     tftSprite.fillRect(0, 0, 135, 90, BLACK);
     tftSprite.setTextColor(WHITE);
-    tftSprite.drawString("BTN:" + String(btn_stauts), 10, 10);
+    tftSprite.drawString("BTN:" + String(btn_status), 10, 10);
     tftSprite.drawString("ENCODER:", 10, 40);
     tftSprite.setCursor(10, 65);
     tftSprite.setTextColor(GREEN);
