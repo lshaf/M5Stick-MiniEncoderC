@@ -72,7 +72,8 @@ bool UNIT_MINIENCODERC::getButtonStatus() {
     return data;
 }
 
-void UNIT_MINIENCODERC::setLEDColor(uint8_t index, uint32_t color) {
+// color would be 0x112233 >> 0xrgb
+void UNIT_MINIENCODERC::setLEDColor(uint32_t color) {
     uint8_t data[4];
     data[2] = color & 0xff;
     data[1] = (color >> 8) & 0xff;
