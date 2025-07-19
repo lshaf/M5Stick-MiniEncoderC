@@ -30,7 +30,7 @@ class UNIT_MINIENCODERC {
     void setEncoderValue(int32_t value);
     uint32_t getIncrementValue();
     bool getButtonStatus();
-    void setLEDColor(uint8_t index, uint32_t color);
+    void setLEDColor(uint32_t color);
     uint8_t setI2CAddress(uint8_t addr);
     uint8_t getI2CAddress(void);
     uint8_t getFirmwareVersion(void);
